@@ -1,0 +1,12 @@
+[default.general]
+chip = "nrf52833_xxAA"   # change this to match your target
+
+[default.reset]
+halt_afterwards = false   # set to true to avoid the program to run instantly
+
+[default.rtt]
+enabled = true          # for sending text to a debugger
+
+[default.gdb]
+enabled = true           # for debugging
+gdb_connection_string = "127.0.0.1:3333"

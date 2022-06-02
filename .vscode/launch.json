@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "showDevDebugOutput": true,
+    "configurations": [
+        {
+            "name": "Debug (Blinky)",
+            "type": "cortex-debug",
+            "preLaunchTask": "build",
+            "request": "launch",
+            "servertype": "openocd",
+            "interface": "swd",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/target/thumbv7em-none-eabihf/debug/blink-led",
+            "device": "nrf52833_01AA",
+            "svdFile": "${workspaceRoot}/nrf52833.svd",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/nrf52.cfg"
+            ],
+            "rttConfig": {
+                "enabled": true,
+                "address": "auto",
+                "clearSearch": false,    // OpenOCD users may have to un-comment this
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console"
+                    }
+                ]
+            },
+            "runToEntryPoint": "main",
+        },
+    ]
+}
