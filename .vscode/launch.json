@@ -10,25 +10,38 @@
             "servertype": "openocd",
             "interface": "swd",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/target/thumbv7em-none-eabihf/debug/blink-led",
-            "device": "nrf52833_01AA",
-            "svdFile": "${workspaceRoot}/nrf52833.svd",
+            "executable": "${workspaceRoot}/target/thumbv7em-none-eabihf/debug/blink-led", // change to match your project
+            "device": "nrf52833_01AA", // Change to match your target
+            "svdFile": "${workspaceRoot}/nrf52833.svd", // Change to match your target
             "configFiles": [
-                "interface/cmsis-dap.cfg",
-                "target/nrf52.cfg"
+                "interface/cmsis-dap.cfg", // Change to match your target
+                "target/nrf52.cfg" // Change to match your target
             ],
             "rttConfig": {
-                "enabled": true,
+                "enabled": true, // Disable this if you don't want to use RTT to debug
                 "address": "auto",
-                "clearSearch": false,    // OpenOCD users may have to un-comment this
                 "decoders": [
                     {
                         "port": 0,
-                        "type": "console"
+                        "type": "console",
+                        "label": "RTT0"
                     }
                 ]
             },
-            "runToEntryPoint": "main",
-        },
+            "swoConfig": {
+                "enabled": false, // Disable this if you don't wat to use ITM to debug
+                "cpuFrequency": 8000000, // Change to match your target
+                "swoFrequency": 2000000, // Change to match your target
+                "source": "probe",
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "ITM0",
+                    }
+                ]
+            },
+            "runToEntryPoint": "main"
+        }
     ]
 }

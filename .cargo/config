@@ -5,4 +5,4 @@ rustflags = [
 ]
 
 [build]
-target = "thumbv7em-none-eabihf"
+target = "thumbv7em-none-eabihf"   # Change this to match your target

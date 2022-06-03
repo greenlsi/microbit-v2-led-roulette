@@ -32,11 +32,12 @@ const PIXELS: [(usize, usize); 16] = [
 
 #[entry]
 fn main() -> ! {
-    rtt_init_print!();
-    rprintln!("Hello World");
     let board = Board::take().unwrap();
     let mut timer = Timer::new(board.TIMER0);
     let mut display = Display::new(board.display_pins);
+
+    rtt_init_print!();
+    rprintln!("Hello World");
 
     let mut leds = [
         [0, 0, 0, 0, 0],
