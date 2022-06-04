@@ -1,9 +1,8 @@
 {
     "version": "0.2.0",
-    "showDevDebugOutput": true,
     "configurations": [
         {
-            "name": "Debug (Blinky)",
+            "name": "Debug (OpenOCD)",
             "type": "cortex-debug",
             "preLaunchTask": "build",
             "request": "launch",
@@ -24,7 +23,7 @@
                     {
                         "port": 0,
                         "type": "console",
-                        "label": "RTT0"
+                        "label": "RTT"
                     }
                 ]
             },
@@ -37,7 +36,7 @@
                     {
                         "port": 0,
                         "type": "console",
-                        "label": "ITM0",
+                        "label": "ITM",
                     }
                 ]
             },

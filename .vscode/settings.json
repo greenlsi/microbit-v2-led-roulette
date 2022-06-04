@@ -1,0 +1,4 @@
+{
+    "rust.target": "thumbv7em-none-eabihf",  // change to your target
+    "rust.all_targets": false
+}
